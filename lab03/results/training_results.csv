@@ -1,0 +1,4 @@
+Model,Parameters,Test Accuracy (%),Training Time (seconds)
+MLP,235146,87.57,75.01
+CNN,20490,89.9,183.4
+Attention,70794,84.13,218.83

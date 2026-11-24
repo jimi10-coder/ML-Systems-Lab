@@ -1,0 +1,4 @@
+Model,Parameters,Test Accuracy (%),Training Time (seconds),Latency Batch 1 (ms),Latency Batch 128 (ms)
+MLP,235146,87.57,75.01,0.2266,0.7608
+CNN,20490,89.9,183.4,0.4311,6.6082
+Attention,70794,84.13,218.83,0.5915,3.3671
