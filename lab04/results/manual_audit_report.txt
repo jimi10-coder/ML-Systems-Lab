@@ -1,0 +1,23 @@
+MANUAL DATA QUALITY AUDIT
+
+Dataset: UCI Adult
+Sample size: 50 randomly selected rows
+Random state: 42
+
+Checks performed:
+- Age: All values within 17-90.
+- Hours per week: All values within 1-99.
+- Capital gain: All values within 0-99999.
+- Capital loss: All values within 0-4356.
+- Education-num: Values within 1-16.
+- Income labels: All labels valid.
+
+Missing values:
+- Workclass: 2
+- Occupation: 2
+- Native-country: 1
+
+Conclusion:
+No impossible values were identified in the 50 inspected rows.
+Missing categorical values were observed and will be handled
+by the preprocessing pipeline.

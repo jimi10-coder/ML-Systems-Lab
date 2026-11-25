@@ -1,0 +1,33 @@
+
+project:
+  name: "Adult Income Prediction"
+  random_state: 42
+
+dataset:
+  name: "UCI Adult"
+  source: "OpenML"
+  version: 2
+  target: "class"
+  test_size: 0.30
+
+preprocessing:
+  numerical_imputation: "median"
+  categorical_imputation: "most_frequent"
+  outlier_lower_percentile: 1
+  outlier_upper_percentile: 99
+  categorical_encoding: "one_hot"
+  numerical_scaling: "standard"
+  drop_training_duplicates: true
+  keep_test_untouched: true
+
+model:
+  algorithm: "LogisticRegression"
+  max_iterations: 1000
+  evaluation_metrics:
+    - accuracy
+    - f1_score
+
+feature_engineering:
+  enabled:
+    - capital_net
+    - hours_per_age
