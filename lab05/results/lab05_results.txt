@@ -1,0 +1,75 @@
+
+ML SYSTEMS LAB 05 — FINAL RESULTS
+=================================
+
+TASK 4: GRADIENT VERIFICATION
+-----------------------------
+Custom engine output: 49.0
+PyTorch output: 49.0
+
+Custom engine gradients: [42.0, 28.0, 14.0]
+PyTorch gradients: [42.0, 28.0, 14.0]
+
+Numerical gradients:
+[41.99999999698889, 28.000000003913783, 14.000000003733248]
+
+Maximum absolute difference:
+3.9137830754043534e-09
+
+Result: PASS (required difference < 1e-6)
+
+
+TASK 5: NEURAL NETWORK TRAINING
+-------------------------------
+Dataset: make_moons
+Total samples: 200
+Training samples: 160
+Testing samples: 40
+Input features: 2
+
+Architecture:
+2 -> 8 -> 1
+
+Activations: ReLU and Sigmoid
+Loss: Binary Cross-Entropy
+Epochs: 20
+Learning rate: 0.05
+
+Median training time (5 runs):
+Custom engine: 1.4131 seconds
+PyTorch: 1.7040 seconds
+
+Observation:
+The custom engine was faster in this benchmark.
+Results may vary depending on the machine and runtime conditions.
+
+
+TASK 6: PYTORCH INSPECTION
+--------------------------
+Computation graph operations:
+AddmmBackward0
+ReluBackward0
+TBackward0
+AccumulateGrad
+
+Eager execution: 0.0400 ms
+Traced execution: 0.0201 ms
+
+Tensor properties:
+Shape: 512 x 512
+Data type: float32
+Original tensor: contiguous
+Transposed tensor: non-contiguous
+Transposed strides: (1, 512)
+
+Operation timing:
+Transpose view creation: 0.0041 ms
+Making tensor contiguous: 0.4221 ms
+
+Observation:
+A transpose creates a view without copying the data.
+Making the tensor contiguous requires a new copy and takes longer.
+
+Note:
+PyTorch displayed a deprecation warning for torch.jit.trace,
+but the tracing experiment completed successfully.
